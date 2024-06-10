@@ -1,0 +1,34 @@
+{
+  "name": "e2e-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "playwright": "npx playwright",
+    "test": "playwright test",
+    "===== Fravega =====": "",
+    "test:fravega-billing-entity": "playwright test --config=playwright.config.ts src/tests/billingentity/billingEntityTests.spec.ts",
+    "test:fravega-customers": "playwright test --config=playwright.config.ts src/tests/customers/customersTests.spec.ts",
+    "test:fravega-login": "playwright test --config=playwright.config.ts src/tests/tests/logingtests/loginTests.spec.ts",
+    "test:fravega-all": "playwright test --config=playwright.config.ts src/tests/*/.spec.ts",
+    "===== Clean =====": "",
+    "clean-results": "del /s /q allure-results\\*",
+    "===== Allure =====": "",
+    "allure:test": "yarn playwright test --config=playwright.config.ts --reporter=allure-playwright",
+    "allure:html-report": "allure generate --clean -o public allure-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/jest": "^29.4.0",
+    "allure-commandline": "^2.24.1",
+    "allure-playwright": "^2.9.2",
+    "dotenv": "^16.0.3",
+    "winston": "^3.9.0"
+  },
+  "dependencies": {
+    "playwright": "^1.44.1"
+  }
+}
