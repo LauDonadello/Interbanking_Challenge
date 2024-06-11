@@ -21,58 +21,51 @@ export class filters extends BaseComponent{
         this.freeDelivery = page.locator('[title="Envío gratis"]')
     }
     
-/**
+    /**
      * Click on the min internal memory field
-     * @returns {Promise<void>}
      */
-async clickMinField(): Promise<void> {
-    this.logger.info('Click on the min internal memory field')
-    await this.minInternalMemory.click();
-}
+    async clickMinField(): Promise<void> {
+        this.logger.info('Click on the min internal memory field')
+        await this.minInternalMemory.click();
+    }
     
-/**
+    /**
      * Enter min memory
-     * @returns {Promise<void>}
      */
-async enterMinMemory(minMemory): Promise<void> {
-    this.logger.info('Enter min memory')
-    await this.minInternalMemory.fill(minMemory);
-}
+    async enterMinMemory(minMemory): Promise<void> {
+        this.logger.info('Enter min memory')
+        await this.minInternalMemory.fill(minMemory);
+    }
     
-/**
-    * Click on the max internal memory field
-    * @returns {Promise<void>}
-    */
-async clickMaxField(): Promise<void> {
-    this.logger.info('Click on the max internal memory field')
-    await this.maxInternalMemory.click();
-}
+    /**
+     * Click on the max internal memory field
+     */
+    async clickMaxField(): Promise<void> {
+        this.logger.info('Click on the max internal memory field')
+        await this.maxInternalMemory.click();
+    }
     
-/**
+    /**
      * Enter max memory
-     * @returns {Promise<void>}
      */
-async enterMaxMemory(maxMemory): Promise<void> {
-    this.logger.info('Enter max memory')
-    await this.maxInternalMemory.fill(maxMemory);
-}
+    async enterMaxMemory(maxMemory): Promise<void> {
+        this.logger.info('Enter max memory')
+        await this.maxInternalMemory.fill(maxMemory);
+    }
 
-/**
+    /**
      * Submit internal memory filter
-     * @returns {Promise<void>}
      */
-async clickSubmitIntMemory(): Promise<void> {
-    this.logger.info('Submit internal memory filter')
-    await this.submitInternalMemory.click();
-}
+    async clickSubmitIntMemory(): Promise<void> {
+        this.logger.info('Submit internal memory filter')
+        await this.submitInternalMemory.click();
+    }
 
-/**
+    /**
      * Click on the free delivery option
-     * @returns {Promise<void>}
      */
-async clickFreeDelivery(): Promise<void> {
-    this.logger.info('Click on the free delivery option')
-    await this.freeDelivery.click();
-}
-
+    async clickFreeDelivery(): Promise<void> {
+        this.logger.info('Click on the free delivery option')
+        await this.freeDelivery.click();
+    }
 }

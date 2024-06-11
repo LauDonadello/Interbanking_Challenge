@@ -16,7 +16,7 @@ export class loginPage extends basePage {
 
     /**
      * Click on ingresar button
-    */
+     */
     async clickIngresar(): Promise<void> {
         this.logger.info('Click on ingresar button')
         await this.ingresarButton.click();

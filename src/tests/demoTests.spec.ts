@@ -6,7 +6,6 @@ import { productPage } from '../mercadolibre/pages/productPage';
 import { loginPage } from '../mercadolibre/pages/loginPage.ts';
 import assert from 'assert';
 
-
 test.describe('Demo Challenge Tests', () => {
     test('Search', async ({ page }, testInfo) => {
         //Arrange
@@ -25,20 +24,19 @@ test.describe('Demo Challenge Tests', () => {
         await home.clickSearchBar()
         await home.enterkeyword(keyword)
         await home.pressEnter()
-        await filter.clickMinField()
-        await filter.enterMinMemory(numMemory)
-        await filter.clickMaxField()
-        await filter.enterMaxMemory(numMemory)
-        await filter.clickSubmitIntMemory()
-        await filter.clickFreeDelivery()
-        await results.clickMasTarde()
-        await results.clickFirstResult()
-        await product.clickAddToCart();
+        .then(()=>filter.clickMinField())
+        .then(()=>filter.enterMinMemory(numMemory))
+        .then(()=>filter.clickMaxField())
+        .then(()=>filter.enterMaxMemory(numMemory))
+        .then(()=>filter.clickSubmitIntMemory())
+        .then(()=>filter.clickFreeDelivery())
+        .then(()=>results.clickMasTarde())
+        .then(()=>results.clickFirstResult())
+        .then(()=>product.clickAddToCart())
+        .then(()=>login.clickIngresar());
 
         //assert
         assert.equal(await login.getLoginMessage(), loginTitle,
       'El mensaje de alerta no es: '+ loginTitle);
-
-
     });
 });
