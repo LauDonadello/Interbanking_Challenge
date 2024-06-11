@@ -1,0 +1,56 @@
+import { Given, When, Then, setDefaultTimeout, And } from "cucumber";
+
+setDefaultTimeout(60 * 1000 * 2)
+
+import { expect } from "@playwright/test";
+import { homePage } from "../../mercadolibre/pages/homePage";
+import { filters } from "../../mercadolibre/components/filters";
+
+const KEYWORD = 'iphone 13';
+const NUM_MEMORY = '256';
+const NO_VALID_MEMORY = '200';
+
+Given('Soy un usuario interesado en comprar un iPhone 13 con un almacenamiento en especifico', async ({ page }) => {
+    const home = new homePage(page);
+    await home.navigateToHomePage();
+});
+Given('Soy un usuario interesado en comprar un iPhone 13 con un almacenamiento inexistente en el mercado', async ({ page }) => {
+    const home = new homePage(page);
+    await home.navigateToHomePage();
+});
+When('Ingreso al sitio de Mercado Libre', async ({ page }) => {
+    const home = new homePage(page);
+    await home.clickSearchBar()
+    await home.enterkeyword(KEYWORD)
+    await home.pressEnter();
+});
+Then('Quiero realizar una busqueda personalizada y verificar que puedo comprar el producto pidiendome ingresar mi usuario', async ({ page }) => {
+
+});
+Then('Se espera mensaje de error al no existir el almacenamiento buscado', async ({ page }) => {
+
+});
+And('Agrego el filtro segun el almacenamiento buscado', async ({ page }) => {
+    const results = new filters(page);
+    await results.clickMinField()
+    await results.enterMinMemory(NUM_MEMORY)
+    await results.clickMaxField()
+    await results.enterMaxMemory(NUM_MEMORY)
+    await results.clickSubmitIntMemory();
+});
+And('Agrego los filtros segun el almacenamiento buscado y envio gratis', async ({ page }) => {
+    const results = new filters(page);
+    await results.clickMinField()
+    await results.enterMinMemory(NUM_MEMORY)
+    await results.clickMaxField()
+    await results.enterMaxMemory(NUM_MEMORY)
+    await results.clickSubmitIntMemory();
+});
+And('Agrego el filtro para un almacenamiento no existente en el mercado', async ({ page }) => {
+    const results = new filters(page);
+    await results.clickMinField()
+    await results.enterMinMemory(NO_VALID_MEMORY)
+    await results.clickMaxField()
+    await results.enterMaxMemory(NO_VALID_MEMORY)
+    await results.clickSubmitIntMemory();
+});

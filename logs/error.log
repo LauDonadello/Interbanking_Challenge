@@ -54,3 +54,14 @@
 {"level":"info","message":"Click on search bar"}
 {"level":"info","message":"Enter keyword"}
 {"level":"info","message":"Press enter to search"}
+{"level":"info","message":"Click on Forms button"}
+{"level":"info","message":"Click on Forms button"}
+{"level":"info","message":"Press enter to search"}
+{"level":"info","message":"Click on Forms button"}
+{"level":"info","message":"Click on Forms button"}
+{"level":"info","message":"Press enter to search"}
+{"level":"info","message":"Click on the min internal memory field"}
+{"level":"info","message":"Enter min memory"}
+{"level":"info","message":"Click on the max internal memory field"}
+{"level":"info","message":"Enter max memory"}
+{"level":"info","message":"Submit internal memory filter"}
